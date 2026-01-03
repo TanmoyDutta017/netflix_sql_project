@@ -2,6 +2,7 @@
 ====================================================================
 Step 1: Drop the table if it already exists.
 Step2: Create required columns.
+====================================================================
 */
 
 DROP TABLE IF EXISTS nfd.netflix
