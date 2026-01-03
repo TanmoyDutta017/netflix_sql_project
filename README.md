@@ -65,7 +65,7 @@ TABLOCK
 		GROUP BY type
 		Order by 2 DESC
 ```
-### Objective: Determine the distribution of content types on Netflix.
+ **Objective:** Determine the distribution of content types on Netflix.
 
 **2.Find the most common rating for movies and TV shows**
 
@@ -87,7 +87,7 @@ TABLOCK
     FROM CTE_Rating
     WHERE Rnfx  = 1
 ```
-### Objective: Identify the most frequently occurring rating for each type of content.
+**Objective:** Identify the most frequently occurring rating for each type of content.
 
 **3.List all movies released in a specific year (e.g., 2020)**
 
@@ -99,7 +99,7 @@ TABLOCK
     FROM nfd.netflix
     WHERE  release_year = '2020' AND type = 'Movie'
 ```
-### Objective: List all movies released in a specific year (e.g., 2020).
+**Objective:** List all movies released in a specific year (e.g., 2020).
 
 **4.Find the top 5 countries with the most content on Netflix**
 
@@ -118,7 +118,7 @@ TABLOCK
     )t
     Order by cnt_cntry DESC
 ```
-### Objective: Find the top 5 countries with the most content on Netflix.
+**Objective:** Find the top 5 countries with the most content on Netflix.
 
 **5.Identify the longest movie**
 
@@ -138,7 +138,7 @@ TABLOCK
     ORDER BY duration_min DESC
 
 ```
-### Objective: Identify the longest movie.
+**Objective:** Identify the longest movie.
 
 **6.Find content added in the last 5 years**
 
@@ -149,7 +149,7 @@ TABLOCK
     FROM nfd.netflix
     WHERE DATEDIFF(Year,date_added,GETDATE()) <= 5
 ```
-### Objective: Find content added in the last 5 years.
+**Objective:** Find content added in the last 5 years.
 
 **7. Find all the movies/TV shows by director 'Rajiv Chilaka'!**
 ```sql
@@ -158,7 +158,7 @@ TABLOCK
     FROM nfd.netflix
     WHERE director LIKE '%Rajiv Chilaka%'
 ```    
-### Objective: Find all the movies/TV shows by director 'Rajiv Chilaka'.
+**Objective:** Find all the movies/TV shows by director 'Rajiv Chilaka'.
 
 **8. List all TV shows with more than 5 seasons**
 ```sql
@@ -173,7 +173,7 @@ TABLOCK
     )t WHERE dura >=5
     Order by dura DESC
  ```   
-### Objective: List all TV shows with more than 5 seasons.
+**Objective:** List all TV shows with more than 5 seasons.
 
 **9. Count the number of content items in each genre**
 ```sql
@@ -185,7 +185,7 @@ TABLOCK
     GROUP BY TRIM(value)
     Order by 2 DESC
  ```   
-### Objective: Count the number of content items in each genre.
+**Objective:** Count the number of content items in each genre.
 
 **10.Find each year and the average numbers of content release in India on netflix. return top 5 year with highest avg content release!**
 ```sql		
@@ -207,7 +207,7 @@ TABLOCK
     GROUP BY year(date_added)
     Order by 2 DESC
  ```       
-### Objective: Top 5 year with highest avg content release in India.
+**Objective:** Top 5 year with highest avg content release in India.
 
 **11. List all movies that are documentaries**
 ```sql		
@@ -216,7 +216,7 @@ TABLOCK
     FROM nfd.netflix
     WHERE listed_in like '%Documentaries%'
 ```
-### Objective: List all movies that are documentaries.
+**Objective:** List all movies that are documentaries.
 
 **12. Find all content without a director**
 ```sql
@@ -225,7 +225,7 @@ TABLOCK
     FROM nfd.netflix
     WHERE director IS NULL
 ```        
-### Objective: Find all content without a director.
+**Objective:** Find all content without a director.
 
 **13. Find how many movies actor 'Salman Khan' appeared in last 10 years!**
 ```sql		
@@ -235,7 +235,7 @@ TABLOCK
     WHERE cast LIKE '%Salman Khan%'
     AND YEAR(GETDATE())-release_year <=10
 ```        
-### Objective: Find how many movies actor 'Salman Khan' appeared in last 10 years!
+**Objective:** Find how many movies actor 'Salman Khan' appeared in last 10 years!
 
 **14. Find the top 10 actors who have appeared in the highest number of movies produced in India.**
 ```sql		
@@ -248,7 +248,7 @@ TABLOCK
     GROUP BY TRIM(Value)
     Order by cnt DESC
 ```       
-### Objective: Find the top 10 actors who have appeared in the highest number of movies produced in India.
+**Objective:** Find the top 10 actors who have appeared in the highest number of movies produced in India.
 
 **15.Categorize the content based on the presence of the keywords 'kill' and 'violence' in 
 the description field. Label content containing these keywords as 'Bad' and all other 
@@ -265,7 +265,7 @@ content as 'Good'. Count how many items fall into each category.**
     FROM nfd.netflix)t
     GROUP BY category
 ```        
-### Objective: Count how many content fall into each category based on specific keywords.
+**Objective:** Count how many content fall into each category based on specific keywords.
 
 ## Findings and Conclusions
 
